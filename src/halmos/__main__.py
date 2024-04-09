@@ -1097,7 +1097,7 @@ def refine(query: str) -> str:
     return re.sub(
         r"\(declare-fun evm_(bv[a-z]+)_([0-9]+) \(\(_ BitVec \2\) \(_ BitVec \2\)\) \(_ BitVec \2\)\)",
         r"(define-fun evm_\1_\2 ((x (_ BitVec \2)) (y (_ BitVec \2))) (_ BitVec \2) (ite (= y (_ bv0 \2)) (_ bv0 \2) (\1 x y)))",
-        query
+        query,
     )
 
 
